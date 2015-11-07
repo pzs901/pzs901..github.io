@@ -1,83 +1,60 @@
-# Jasper
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kronik3r/daktilo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-This is a port of Ghost's default theme [Casper](https://github.com/tryghost/casper) for Jekyll inspired by [Kasper](https://github.com/rosario/kasper). 
+# Daktilo
+Daktilo is a [Jekyll](jekyllrb.com) theme with a minimal design inspired from typewriters.
 
-You might well ask at this point why bother making a new Casper's clone? 
-Although this is inspired by Kasper, there are several **additional** features which make this port closer 
-to the original theme. Besides, it was recently updated to match the current version of the theme.
+# Live preview
+[Click here](http://hitchhiker.ma/daktilo/) to see the theme in action.
 
-The main difference to the original is still the fact that Jasper expects a single author. With a 
-bit of tweaking it shouldn't be too difficult to enable a per-post author. Feel free to fork and improve on this.
+# Features
+- Fully responsive
+- [Disqus](https://disqus.com/) integration for comments.
+- Google Analytics integration.
+- Syntax Highlighter (using [highlight.js](https://highlightjs.org/)).
+- Support for categories.
+- Font-Awesome Icons.
+- Optimized for SEO.
+- Coolest [404 page ever](http://hitchhiker.ma/daktilo/404.html).
 
-**Important:**  For security reasons, Github doesn't allow plugins (under _plugins/) when deploying with Github Pages. This means 
-that we need to generate your site locally (as explained below) and push the resulting HTML to a Github repository. 
-This is exactly what I have done for the generating the live demo.
+# How to use it
+Start by cloning the repository, then check the `_config.yml` file and change it accordingly.
+Note that the `title` property is what will be displayed as logo.
 
-## Live demo
+Finally execute `jekyll serve --watch` and head to [localhost:4000](http://127.0.0.1:4000) to see the result.
 
-[Jasper Live Demo](https://biomadeira.github.io/jasper)
+# Using categories
+Categories are little bit tricky. Please make sure to do the following for each category:
 
-[Casper's Original Here](https://demo.ghost.io)
+- Create a file within `categories` folder with the name of your category
+For example let's say that we have a category called `An Awesome Category` you will need to add an `an-awesome-category.html` file with this content:
 
+``` html
+---
+layout: category
+category: an-awesome-category
+permalink: /categories/an-awesome-category/
+---
 
-## Screenshots
+```
 
-**Home page**
-![home page](https://raw.githubusercontent.com/biomadeira/jasper/master/assets/images/jasper_screen1.png)
+- Create an entry inside `_data/categories.yml`
 
-**Post page**
-![post page](https://raw.githubusercontent.com/biomadeira/jasper/master/assets/images/jasper_screen2.png)
+``` html
+- slug: an-awesome-category
+  name: An Awesome Category
+```
 
-**Author page**
-![author page](https://raw.githubusercontent.com/biomadeira/jasper/master/assets/images/jasper_screen3.png)
+- Then you will see it in the footer in the `Explore` section.
 
-**Related posts page**
-![tag page](https://raw.githubusercontent.com/biomadeira/jasper/master/assets/images/jasper_screen4.png)
+# Sneak peek
 
-**Tags page with opened sidebar**
-![sidebar page](https://raw.githubusercontent.com/biomadeira/jasper/master/assets/images/jasper_screen5.png)
+![img][home_desktop]
 
-**404 page**
-![related page](https://raw.githubusercontent.com/biomadeira/jasper/master/assets/images/jasper_screen6.png)
+![img][home_phone]
 
-## Jasper theme includes
+[home_desktop]: https://raw.githubusercontent.com/kronik3r/assets/master/daktilo/desktop.png
+[home_phone]: https://raw.githubusercontent.com/kronik3r/assets/master/daktilo/phone.png
 
-* Pagination
-* Author page **(New 07.02.2015)**
-* Tag page(s) **(New 07.02.2015)**
-* 404 page **(New 07.02.2015)**
-* Toggleable sliding sidebar **(New 07.02.2015)**
-* Related posts view **(New 30.10.2015)**
-* Tag description(s) **(New 30.10.2015)**
-* Rss
-* Google Analytics tracking
-* Code Syntax Highlight
-* Author's profile with picture
-* Disqus comments (not Ghost standard)
+# License
 
-## How to use it
-
-Simply clone this repository (*master branch*), and then run `jekyll serve` inside the directory. Upload the resulting 
-_site/ contents to your repository (*gh-pages branch*).
-
-## Issues and contributing 
-
-I have tested this install with Ruby v2.2.2p95 (Mac OS RVM) and Jekyll v3.0.0. If you run into any issues please log them on the [issue tracker](https://github.com/biomadeira/jasper/issues).
-
-Feel free pull-request your patches and fixes.
-
-## Thanks 
-
-Most of the work has been already done by the Ghost team and Rosario. Many thanks to them :smile:
-
-
-## Copyright & License
-
-Copyright (C) 2015 - Released under the MIT License.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+The contents of this repository is licensed under [The MIT License.](https://opensource.org/licenses/MIT)
