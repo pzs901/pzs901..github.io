@@ -1,29 +1,24 @@
-<!-- Start Header -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand scroll" href="#top"><img src="{{ site.logo_url }}" alt="{{ site.title }}"></a>
-        </div>
+<header class="header">
+    <div class="navigation">
+        <a href="/" class="logo">{{ site.title }}</a>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse scrollspy" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a class="scroll" href="#top">Home</a></li>
-                <li><a class="scroll" href="#about">About</a></li>
-                <li><a class="scroll" href="#treatments">Treatments</a></li>
-                <li><a class="scroll" href="#team">Team</a></li>
-                <li><a class="scroll" href="#testimonials">Testimonials</a></li>
-                <li><a class="scroll" href="#gallery">Gallery</a></li>
-                <li><a class="scroll" href="#location">Location</a></li>
-            </ul>
-        </div>
+        <ul class="menu">
+            <li class="menu__entry"><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+            <li class="menu__entry"><a href="{{ '/' | prepend: site.baseurl }}">Blog</a></li>
+        </ul>
     </div>
-</nav>
-<!-- End Header -->
+
+    <ul class="social-links">
+        {% if site.author.github %}
+            <a href="https://github.com/{{ site.author.github }}" class="social-links__entry" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+        {% endif %}
+
+        {% if site.author.twitter %}
+            <a href="https://twitter.com/{{ site.author.twitter }}" class="social-links__entry" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+        {% endif %}
+    </ul>
+</header>
